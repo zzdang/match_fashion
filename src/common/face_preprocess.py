@@ -8,20 +8,23 @@ def parse_lst_line(line):
   assert len(vec)>=3
   aligned = int(vec[0])
   image_path = vec[1]
-  label = int(vec[2])
+  label = int(vec[2]) -1
   bbox = None
   landmark = None
   #print(vec)
   if len(vec)>3:
     bbox = np.zeros( (4,), dtype=np.int32)
-    for i in xrange(3,7):
-      bbox[i-3] = int(vec[i])
+    for i in range(3,7):
+      bbox[i-3] = int(float(vec[i]))
     landmark = None
-    if len(vec)>7:
-      _l = []
-      for i in xrange(7,17):
-        _l.append(float(vec[i]))
-      landmark = np.array(_l).reshape( (2,5) ).T
+    ### edit for tianchi
+    # if len(vec)>7:
+    #   _l = []
+    #   for i in xrange(7,17):
+    #     _l.append(float(vec[i]))
+    #   landmark = np.array(_l).reshape( (2,5) ).T
+  # if vec[7] != 3:
+  #   continue
   #print(aligned)
   return image_path, label, bbox, landmark, aligned
 

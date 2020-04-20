@@ -34,7 +34,7 @@ import symbol_utils
 import memonger
 import sklearn
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
-from config import config
+from sample_config import config
 
 def Conv(**kwargs):
     #name = kwargs.get('name')
@@ -547,7 +547,7 @@ def resnet(units, num_stages, filter_list, num_classes, bottle_neck):
       data = data-127.5
       data = data*0.0078125
       body = data
-      body = Conv(data=body, num_filter=filter_list[0], kernel=(3,3), stride=(1,1), pad=(1, 1),
+      body = Conv(data=body, num_filter=filter_list[0], kernel=(7,7), stride=(2,2), pad=(1, 1),
                                 no_bias=True, name="conv0", workspace=workspace)
       body = mx.sym.BatchNorm(data=body, fix_gamma=False, eps=2e-5, momentum=bn_mom, name='bn0')
       body = Act(data=body, act_type=act_type, name='relu0')

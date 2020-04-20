@@ -33,6 +33,7 @@ from easydict import EasyDict as edict
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'common'))
 import face_preprocess
 import face_image
+import numpy as np
 
 try:
     import multiprocessing
@@ -89,9 +90,20 @@ def image_encode(args, i, item, q_out):
       header = mx.recordio.IRHeader(item.flag, item.label, item.id, 0)
       #print('write', item.flag, item.id, item.label)
       if item.aligned:
-        with open(fullpath, 'rb') as fin:
-            img = fin.read()
-        s = mx.recordio.pack(header, img)
+        # with open(fullpath, 'rb') as fin:
+        #     img = fin.read()
+        # s = mx.recordio.pack(header, img)
+        img = cv2.imread(fullpath, args.color)
+        det = item.bbox
+        margin = 44
+        bb = np.zeros(4, dtype=np.int32)
+        bb[0] = np.maximum(det[0] - margin / 2, 0)
+        bb[1] = np.maximum(det[1] - margin / 2, 0)
+        bb[2] = np.minimum(det[2] + margin / 2, img.shape[1])
+        bb[3] = np.minimum(det[3] + margin / 2, img.shape[0])
+        img = img[bb[1]:bb[3], bb[0]:bb[2], :]
+        img = cv2.resize(img, (224, 224))
+        s = mx.recordio.pack_img(header, img, quality=args.quality, img_fmt=args.encoding)
         q_out.put((i, s, oitem))
       else:
         img = cv2.imread(fullpath, args.color)
@@ -102,7 +114,7 @@ def image_encode(args, i, item, q_out):
     else: 
       header = mx.recordio.IRHeader(item.flag, item.label, item.id, 0)
       #print('write', item.flag, item.id, item.label)
-      s = mx.recordio.pack(header, '')
+      s = mx.recordio.pack(header, b'')
       q_out.put((i, s, oitem))
 
 
@@ -174,7 +186,7 @@ def parse_args():
     rgroup = parser.add_argument_group('Options for creating database')
     rgroup.add_argument('--quality', type=int, default=95,
                         help='JPEG quality for encoding, 1-100; or PNG compression for encoding, 1-9')
-    rgroup.add_argument('--num-thread', type=int, default=1,
+    rgroup.add_argument('--num-thread', type=int, default=8,
                         help='number of thread to use for encoding. order of images will be different\
         from the input list if >1. the input list will be modified to match the\
         resulting order.')
@@ -202,8 +214,8 @@ if __name__ == '__main__':
             working_dir = args.prefix
         else:
             working_dir = os.path.dirname(args.prefix)
-        prop = face_image.load_property(working_dir)
-        image_size = prop.image_size
+        # prop = face_image.load_property(working_dir)
+        image_size = [224, 224] #prop.image_size
         print('image_size', image_size)
         args.image_h = image_size[0]
         args.image_w = image_size[1]

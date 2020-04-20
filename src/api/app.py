@@ -12,7 +12,7 @@ from flask import Flask, render_template, request, jsonify
 
 parser = argparse.ArgumentParser(description='do verification')
 # general
-parser.add_argument('--image-size', default='112,112', help='')
+parser.add_argument('--image-size', default='224,224', help='')
 parser.add_argument('--model', default='../model/softmax,50', help='path to load model.')
 parser.add_argument('--gpu', default=0, type=int, help='gpu id')
 parser.add_argument('--threshold', default=1.24, type=float, help='ver dist threshold')
@@ -26,12 +26,23 @@ app = Flask(__name__)
 def hello_world():
   return 'Hello, This is InsightFace!'
 
-def image_resize(image):
-  m = min(image.shape[0], image.shape[1])
-  f = 640.0/m
-  if f<1.0:
-    image = cv2.resize(image, (int(image.shape[1]*f), int(image.shape[0]*f)))
-  return image
+def image_resize(img):
+  h,w,c = img.shape
+  img_dst = np.ones((224, 224, 3), dtype=np.uint8) * 128
+  if h >= w:
+    dst_h = 224;
+    dst_w = int(w / h * 224.0)
+  else:
+    dst_w = 224;
+    dst_h = int(h / w * 224.0)
+  img = cv2.resize(img, (dst_w, dst_h))
+  img_dst[int((224 - dst_h) / 2):int((224 - dst_h) / 2) + dst_h, int((224 - dst_w) / 2):int((224 - dst_w) / 2) + dst_w, :] = img
+
+  # m = min(image.shape[0], image.shape[1])
+  # f = 640.0/m
+  # if f<1.0:
+  #   image = cv2.resize(image, (int(image.shape[1]*f), int(image.shape[0]*f)))
+  return img_dst
 
 def get_image(data):
   image = None

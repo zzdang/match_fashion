@@ -2,7 +2,7 @@ import sys
 import os
 import mxnet as mx
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
-from config import config
+from sample_config import config
 
 def Conv(**kwargs):
     #name = kwargs.get('name')

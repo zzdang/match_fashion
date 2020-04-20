@@ -20,7 +20,7 @@ import os
 import mxnet as mx
 import symbol_utils
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
-from config import config
+from sample_config import config
 
 def Act(data, act_type, name):
     #ignore param act_type, set it in this function 

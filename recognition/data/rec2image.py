@@ -17,8 +17,8 @@ def main(args):
   include_datasets = args.include.split(',')
   rec_list = []
   for ds in include_datasets:
-    path_imgrec = os.path.join(ds, 'train.rec')
-    path_imgidx = os.path.join(ds, 'train.idx')
+    path_imgrec = os.path.join(ds,  'reg_tra_cat_4_23_idx.rec' )#'train.rec')
+    path_imgidx = os.path.join(ds, 'reg_tra_cat_4_23_idx.idx' ) #'train.idx')
     imgrec = mx.recordio.MXIndexedRecordIO(path_imgidx, path_imgrec, 'r')  # pylint: disable=redefined-variable-type
     rec_list.append(imgrec)
   if not os.path.exists(args.output):
@@ -48,6 +48,8 @@ def main(args):
         _img = mx.image.imdecode(_img).asnumpy()[:,:,::-1] # to bgr
         image_path = os.path.join(id_dir, "%d.jpg"%imgid)
         cv2.imwrite(image_path, _img)
+        # cv2.imshow('img', _img)
+        # cv2.waitKey(0)
         imgid+=1
 
 
@@ -57,7 +59,7 @@ if __name__ == '__main__':
   parser = argparse.ArgumentParser(description='do dataset merge')
   # general
   parser.add_argument('--include', default='', type=str, help='')
-  parser.add_argument('--output', default='', type=str, help='')
+  parser.add_argument('--output', default='./out', type=str, help='')
   args = parser.parse_args()
   main(args)
 

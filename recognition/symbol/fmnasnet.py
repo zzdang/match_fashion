@@ -7,7 +7,7 @@ import mxnet.gluon.nn as nn
 import mxnet.autograd as ag
 import symbol_utils
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
-from config import config
+from sample_config import config
 
 def Act():
     if config.net_act=='prelu':
@@ -134,7 +134,7 @@ class MNasNet(nn.HybridBlock):
 
         with self.name_scope():
             self.features = nn.HybridSequential()
-            self.features.add(ConvBlock(self.first_oup, 3, 1, prefix="stage1_conv0_"))
+            self.features.add(ConvBlock(self.first_oup, 3, 2, prefix="stage1_conv0_"))
             self.features.add(SepCONV(self.first_oup, self.second_oup, 3, prefix="stage1_sepconv0_"))
             inp = self.second_oup
             for i, (t, c, n, s, k, prefix) in enumerate(self.interverted_residual_setting):

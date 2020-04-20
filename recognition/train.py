@@ -14,7 +14,7 @@ import mxnet as mx
 from mxnet import ndarray as nd
 import argparse
 import mxnet.optimizer as optimizer
-from config import config, default, generate_config
+from sample_config import config, default, generate_config
 from metric import *
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'common'))
 import flops_counter
@@ -177,7 +177,7 @@ def train_net(args):
     assert image_size[0]==image_size[1]
     print('image_size', image_size)
     print('num_classes', config.num_classes)
-    path_imgrec = os.path.join(data_dir, "train.rec")
+    path_imgrec = os.path.join(data_dir, "reg_tra_cat_4_23_idx.rec")
 
     print('Called with argument:', args, config)
     data_shape = (args.image_channel,image_size[0],image_size[1])

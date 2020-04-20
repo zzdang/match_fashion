@@ -53,7 +53,7 @@ network.r50v1.net_unit = 1
 network.d169 = edict()
 network.d169.net_name = 'fdensenet'
 network.d169.num_layers = 169
-network.d169.per_batch_size = 64
+network.d169.per_batch_size = 16 #64
 network.d169.densenet_dropout = 0.0
 
 network.d201 = edict()
@@ -119,12 +119,12 @@ dataset.emore.num_classes = 85742
 dataset.emore.image_shape = (112,112,3)
 dataset.emore.val_targets = ['lfw', 'cfp_fp', 'agedb_30']
 
-dataset.retina = edict()
-dataset.retina.dataset = 'retina'
-dataset.retina.dataset_path = '../datasets/ms1m-retinaface-t1'
-dataset.retina.num_classes = 93431
-dataset.retina.image_shape = (112,112,3)
-dataset.retina.val_targets = ['lfw', 'cfp_fp', 'agedb_30']
+dataset.cat4_23 = edict()
+dataset.cat4_23.dataset = 'cat4_23'
+dataset.cat4_23.dataset_path = '/media/chen/6f586f18-792a-40fd-ada6-59702fb5dabc/comp/mmdet/data/data/'
+dataset.cat4_23.num_classes = 8761
+dataset.cat4_23.image_shape = (224,224,3)
+dataset.cat4_23.val_targets = ['lfw', 'cfp_fp', 'agedb_30']
 
 loss = edict()
 loss.softmax = edict()

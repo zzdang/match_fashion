@@ -28,7 +28,7 @@ import mxnet.gluon.nn as nn
 import mxnet.autograd as ag
 import symbol_utils
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
-from config import config
+from sample_config import config
 
 def Act():
     if config.net_act=='prelu':
@@ -99,7 +99,7 @@ class DenseNet(nn.HybridBlock):
         with self.name_scope():
             self.features = nn.HybridSequential(prefix='')
             self.features.add(nn.Conv2D(num_init_features, kernel_size=3,
-                                        strides=1, padding=1, use_bias=False))
+                                        strides=2, padding=1, use_bias=False))
             self.features.add(nn.BatchNorm())
             self.features.add(nn.Activation('relu'))
             self.features.add(nn.MaxPool2D(pool_size=3, strides=2, padding=1))
