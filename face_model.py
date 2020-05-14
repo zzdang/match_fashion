@@ -82,7 +82,7 @@ class FaceModel:
     # img_dst = img_dst.transpose((2, 0, 1))
     return img_dst
 
-  def get_all_faces(self, img, max_len=1600):
+  def get_all_faces(self, img, max_len=1600, score_thresh = 0.3):
     str_image_size = "%d,%d"%(self.image_size[0], self.image_size[1])
     h, w = img.shape[:2]
     d_w ,d_h = self.resize_image_fix((h,w), max_len)
@@ -99,11 +99,10 @@ class FaceModel:
       for i, bbox in enumerate(bbox_result)
     ]
     labels = np.concatenate(labels)
-    score_thr = 0.3
-    if score_thr > 0:
+    if score_thresh > 0:
       assert bboxes.shape[1] == 5
       scores = bboxes[:, -1]
-      inds = scores > score_thr
+      inds = scores > score_thresh
       bboxes = bboxes[inds, :]
       labels = labels[inds]
     bboxes[:,::2] = bboxes[:,::2] * det_ratio[0]
@@ -116,13 +115,11 @@ class FaceModel:
       left_top = (bbox_int[0], bbox_int[1])
       right_bottom = (bbox_int[2], bbox_int[3])
       aligned = img[bbox_int[1]:min(bbox_int[3],h), bbox_int[0]:min(bbox_int[2],w), :]
-      # landmark = points[:, i].reshape((2,5)).T
-      # aligned = face_preprocess.preprocess(img, bbox=bbox, landmark = landmark, image_size=str_image_size)
       aligned = aligned[:,:,::-1] #cv2.cvtColor(aligned, cv2.COLOR_BGR2RGB)
       aligned = self.image_resize(aligned)
       aligned = np.transpose(aligned, (2,0,1))
       ret.append(aligned)
-    return ret
+    return ret, bboxes.astype(np.int32)
 
   def get_feature_impl(self, face_img, norm):
     embedding = None
@@ -153,9 +150,47 @@ class FaceModel:
     #if aligned_face is None:
     #  return None
     return self.get_feature_impl(face_img, norm)
-  #
-  # def is_same_id(self, source_img, target_img_list):
-  #   source_face = self.get_aligned_face(source_img, True)
+
+  def get_features(self, data_list, batch_size):
+
+    model = mx.mod.Module(symbol=self.model.sym, context=self.model.ctx, label_names = None)
+    model.bind(data_shapes=[('data', (batch_size, 3, 224, 224))])
+    model.set_params(self.model.arg_params, self.model.aux_params)
+    _label = mx.nd.ones((batch_size,))
+    embeddings_list = []
+
+    for i in range( len(data_list) ):
+      data = data_list[i]
+      data = mx.nd.array(data)
+      embeddings = None
+      ba = 0
+      while ba<data.shape[0]:
+        bb = min(ba+batch_size, data.shape[0])
+        count = bb-ba
+        _data = mx.nd.slice_axis(data, axis=0, begin=bb-batch_size, end=bb)
+
+        db = mx.io.DataBatch(data=(_data,), label=(_label,))
+
+        model.forward(db, is_train=False)
+        net_out = model.get_outputs()
+
+        _embeddings = net_out[0].asnumpy()
+
+        #print(_embeddings.shape)
+        if embeddings is None:
+          embeddings = np.zeros( (data.shape[0], _embeddings.shape[1]) )
+        embeddings[ba:bb,:] = _embeddings[(batch_size-count):,:]
+        ba = bb
+      embeddings_list.append(embeddings)
+
+    embeddings = embeddings_list[0] + embeddings_list[1]
+    embeddings = sklearn.preprocessing.normalize(embeddings)
+
+    return embeddings
+
+  # def sim(self, source_img, target_img_list):
+  #   print('sim start')
+  #   source_face = source_img #self.get_aligned_face(source_img, True)
   #   print('source face', source_face.shape)
   #   target_face_list = []
   #   pp = 0
@@ -163,73 +198,57 @@ class FaceModel:
   #     target_force = False
   #     if pp==len(target_img_list)-1 and len(target_face_list)==0:
   #       target_force = True
-  #     target_face = self.get_aligned_face(img, target_force)
+  #     target_face = img #self.get_aligned_face(img, target_force)
   #     if target_face is not None:
   #       target_face_list.append(target_face)
   #     pp+=1
   #   print('target face', len(target_face_list))
   #   source_feature = self.get_feature(source_face, True)
   #   target_feature = None
+  #   sim_list = []
   #   for target_face in target_face_list:
-  #     _feature = self.get_feature(target_face, False)
-  #     if target_feature is None:
-  #       target_feature = _feature
-  #     else:
-  #       target_feature += _feature
-  #   target_feature = sklearn.preprocessing.normalize(target_feature)
-  #   #sim = np.dot(source_feature, target_feature.T)
-  #   diff = np.subtract(source_feature, target_feature)
-  #   dist = np.sum(np.square(diff),1)
-  #   print('dist', dist)
-  #   #print(sim, dist)
-  #   if dist<=self.threshold:
-  #     return True
-  #   else:
-  #     return False
-
-  def sim(self, source_img, target_img_list):
-    print('sim start')
-    source_face = source_img #self.get_aligned_face(source_img, True)
-    print('source face', source_face.shape)
-    target_face_list = []
-    pp = 0
-    for img in target_img_list:
-      target_force = False
-      if pp==len(target_img_list)-1 and len(target_face_list)==0:
-        target_force = True
-      target_face = img #self.get_aligned_face(img, target_force)
-      if target_face is not None:
-        target_face_list.append(target_face)
-      pp+=1
-    print('target face', len(target_face_list)) 
-    source_feature = self.get_feature(source_face, True)
-    target_feature = None
-    sim_list = []
-    for target_face in target_face_list:
-      _feature = self.get_feature(target_face, True)
-      _sim = np.dot(source_feature, _feature.T)
-      sim_list.append(_sim)
-    return np.max(sim_list), np.argmax(sim_list), np.array(sim_list)
+  #     _feature = self.get_feature(target_face, True)
+  #     _sim = np.dot(source_feature, _feature.T)
+  #     sim_list.append(_sim)
+  #   return np.max(sim_list), np.argmax(sim_list), np.array(sim_list)
 
   def sim(self, source_feature, target_featue_list):
-    # source_face = source_img #self.get_aligned_face(source_img, True)
-    # print('source face', source_face.shape)
-    # target_face_list = []
-    # pp = 0
-    # for img in target_img_list:
-    #   target_force = False
-    #   if pp==len(target_img_list)-1 and len(target_face_list)==0:
-    #     target_force = True
-    #   target_face = img #self.get_aligned_face(img, target_force)
-    #   if target_face is not None:
-    #     target_face_list.append(target_face)
-    #   pp+=1
-    # print('target face', len(target_face_list))
-    # source_feature = self.get_feature(source_face, True)
-    target_feature = None
     sim_list = []
     for _feature in target_featue_list:
-      # _feature = self.get_feature(target_face, True)
       _sim = np.dot(source_feature, _feature.T)
       sim_list.append(_sim)
     return np.max(sim_list), np.argmax(sim_list), np.array(sim_list)
+
+  def sims(self, _sim, mp4_l2_dis, mp4_frame_indexs, mp4_frame_boxes, ids):
+    # n, m = source_features.shape[0], target_featue_list.shape[0]
+    # _sim = np.dot(source_features, target_featue_list.T)
+    n, m = _sim.shape
+    idx = np.argmin(_sim)
+    item_idx = idx % m
+    frame_idx = idx // m
+    print(mp4_l2_dis[frame_idx,item_idx], _sim[frame_idx,item_idx])
+    # if _sim[frame_idx,item_idx] > 2:
+    #   return [],[],[],[],[]
+    item_id, img_name, item_box = ids[item_idx]
+    frame_index, frame_box = mp4_frame_indexs[frame_idx], mp4_frame_boxes[frame_idx]
+    ## find taozhuang ##
+    match_frame_idx = np.array(mp4_frame_indexs)==frame_index
+    frame_boxes = np.array(mp4_frame_boxes)[match_frame_idx]
+    if len(frame_boxes) > 1:
+      _sim[frame_idx,:] = 0
+      _sim[:, item_idx] = 0
+      item_idx_2 = np.argmin(_sim[match_frame_idx]) % m
+      frame_box_2 = frame_boxes[np.argmin(_sim[match_frame_idx]) // m]
+      if ids[item_idx_2][0] == ids[item_idx_2][0] and np.min(mp4_l2_dis[match_frame_idx]) < 2:
+        return item_id, frame_index, [img_name, ids[item_idx_2][1]], \
+               [item_box, ids[item_idx_2][2]], [frame_box, frame_box_2]
+    return item_id, frame_index, [img_name], [item_box], [frame_box]
+
+  # def sims(self, source_features, target_featue_list):
+  #   n, m = source_features.shape[0], target_featue_list.shape[0]
+  #   _sim = np.dot(source_features, target_featue_list.T)
+  #
+  #   idx = np.argmax(_sim)
+  #   frame_idx = idx // m
+  #   item_idx = idx % m
+  #   return _sim[frame_idx,item_idx], item_idx, frame_idx

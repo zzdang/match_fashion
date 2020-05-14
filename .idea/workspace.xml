@@ -2,163 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="63378036-cb7e-4849-a88a-253b9c2b274b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PRNet.mxnet/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PRNet.mxnet/config.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PRNet.mxnet/data.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PRNet.mxnet/metric.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PRNet.mxnet/symbol/sym_heatmap.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PRNet.mxnet/train.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/Makefile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/PY_OP/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/PY_OP/cascade_refine.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/PY_OP/rpn_fpn_ohem3.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/core/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/core/callback.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/core/loader.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/core/metric.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/core/module.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/core/module_bak.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/core/tester.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/cython/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/cython/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/cython/anchors.pyx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/cython/bbox.pyx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/cython/cpu_nms.pyx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/cython/gpu_nms.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/cython/gpu_nms.pyx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/cython/nms_kernel.cu" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/cython/setup.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/dataset/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/dataset/ds_utils.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/dataset/imdb.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/dataset/retinaface.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/io/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/io/image.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/io/rcnn.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/io/rpn.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/logger.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/processing/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/processing/assign_levels.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/processing/bbox_regression.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/processing/bbox_transform.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/processing/generate_anchor.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/processing/nms.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/pycocotools/UPSTREAM_REV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/pycocotools/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/pycocotools/_mask.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/pycocotools/_mask.pyx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/pycocotools/coco.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/pycocotools/cocoeval.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/pycocotools/mask.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/pycocotools/maskApi.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/pycocotools/maskApi.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/pycocotools/setup.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/sample_config.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/symbol/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/symbol/pyramidbox.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/symbol/symbol_common.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/symbol/symbol_common.py.bak" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/symbol/symbol_mnet.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/symbol/symbol_mnet.py.bak" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/symbol/symbol_resnet.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/symbol/symbol_ssh.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/tools/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/tools/reeval.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/tools/test_rcnn.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/tools/test_rpn.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/tools/train_rcnn.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/tools/train_rpn.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/utils/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/utils/combine_model.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/utils/load_data.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/utils/load_model.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/rcnn/utils/save_model.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/retinaface.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/test_widerface.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFace/train.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFaceAntiCov/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFaceAntiCov/rcnn/processing/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFaceAntiCov/rcnn/processing/assign_levels.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFaceAntiCov/rcnn/processing/bbox_regression.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFaceAntiCov/rcnn/processing/bbox_transform.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFaceAntiCov/rcnn/processing/bbox_transform.py.orig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFaceAntiCov/rcnn/processing/generate_anchor.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFaceAntiCov/rcnn/processing/nms.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFaceAntiCov/retinaface_cov.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RetinaFaceAntiCov/test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alignment/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alignment/data.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alignment/img_helper.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alignment/metric.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alignment/optimizer.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alignment/sample_config.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alignment/symbol/sym_heatmap.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alignment/test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alignment/test_rec_nme.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alignment/train.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gender-age/Tom_Hanks_54745.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gender-age/data.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gender-age/face_model.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gender-age/fmobilenet.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gender-age/fresnet.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gender-age/helper.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gender-age/model/model-0000.params" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gender-age/model/model-symbol.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gender-age/mtcnn-model/det1-0001.params" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gender-age/mtcnn-model/det1-symbol.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gender-age/mtcnn-model/det1.caffemodel" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gender-age/mtcnn-model/det1.prototxt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gender-age/mtcnn-model/det2-0001.params" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gender-age/mtcnn-model/det2-symbol.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gender-age/mtcnn-model/det2.caffemodel" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gender-age/mtcnn-model/det2.prototxt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gender-age/mtcnn-model/det3-0001.params" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gender-age/mtcnn-model/det3-symbol.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gender-age/mtcnn-model/det3.caffemodel" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gender-age/mtcnn-model/det3.prototxt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gender-age/mtcnn-model/det4-0001.params" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gender-age/mtcnn-model/det4-symbol.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gender-age/mtcnn-model/det4.caffemodel" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gender-age/mtcnn-model/det4.prototxt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gender-age/mtcnn_detector.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gender-age/symbol_utils.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gender-age/test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gender-age/train.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/iccv19-challenge/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/iccv19-challenge/gen_image_feature.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/iccv19-challenge/gen_video_feature.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/recognition/data/rec2image.py" beforeDir="false" afterPath="$PROJECT_DIR$/recognition/data/rec2image.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recognition/sample_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/recognition/sample_config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recognition/symbol/fdensenet.py" beforeDir="false" afterPath="$PROJECT_DIR$/recognition/symbol/fdensenet.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recognition/symbol/fmnasnet.py" beforeDir="false" afterPath="$PROJECT_DIR$/recognition/symbol/fmnasnet.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recognition/symbol/fmobilefacenet.py" beforeDir="false" afterPath="$PROJECT_DIR$/recognition/symbol/fmobilefacenet.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recognition/symbol/fmobilenet.py" beforeDir="false" afterPath="$PROJECT_DIR$/recognition/symbol/fmobilenet.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recognition/symbol/fresnet.py" beforeDir="false" afterPath="$PROJECT_DIR$/recognition/symbol/fresnet.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recognition/symbol/symbol_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/recognition/symbol/symbol_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recognition/symbol/vargfacenet.py" beforeDir="false" afterPath="$PROJECT_DIR$/recognition/symbol/vargfacenet.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recognition/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/recognition/train.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/11513D05.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/arcface.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/cov_test.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/facerecognitionfromvideo.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lfr19_wechat1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/mainsteps.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/memoryspeed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/retina_R50_ex1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/retina_R50_ex2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/widerfacevaltest.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample-images/t1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample-images/t2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/face_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/face_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/face_preprocess.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/face_preprocess.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/face2rec2.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/face2rec2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/face_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/face_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -171,7 +17,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/recognition/train.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
+            <state relative-caret-position="22">
               <caret line="257" column="64" selection-start-line="257" selection-start-column="56" selection-end-line="257" selection-end-column="64" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
@@ -181,21 +27,12 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/common/face_preprocess.py">
+        <entry file="file://$PROJECT_DIR$/recognition/image_iter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="824">
-              <caret line="70" column="9" selection-start-line="70" selection-start-column="6" selection-end-line="70" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/api/test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="5" column="13" selection-start-line="8" selection-start-column="63" selection-end-line="9" selection-end-column="6" />
+            <state relative-caret-position="309">
+              <caret line="270" column="8" selection-start-line="270" selection-start-column="8" selection-end-line="270" selection-end-column="8" />
               <folding>
-                <element signature="e#0#17#0" expanded="true" />
+                <element signature="e#0#38#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -204,32 +41,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/face_model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2578">
-              <caret line="19" column="54" selection-start-line="19" selection-start-column="54" selection-end-line="19" selection-end-column="54" />
-              <folding>
-                <element signature="e#0#38#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="678">
-              <caret line="141" column="88" lean-forward="true" selection-start-line="141" selection-start-column="88" selection-end-line="141" selection-end-column="88" />
-              <folding>
-                <element signature="e#0#17#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/api/face_model.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="16" column="17" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="17" />
+            <state relative-caret-position="673">
+              <caret line="244" column="31" selection-start-line="244" selection-start-column="20" selection-end-line="244" selection-end-column="31" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -238,23 +51,12 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/common/face_align.py">
+        <entry file="file://$PROJECT_DIR$/k_reciprocal.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="-787">
+              <caret line="45" column="16" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="16" />
               <folding>
-                <element signature="e#1#11#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/deploy/face_embedding.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-              <folding>
-                <element signature="e#0#38#0" expanded="true" />
+                <element signature="e#25#37#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -263,19 +65,19 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/common/face_image.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4400">
+            <state relative-caret-position="220">
               <caret line="13" column="48" selection-start-line="13" selection-start-column="48" selection-end-line="13" selection-end-column="48" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/recognition/image_iter.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="36" column="37" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="37" />
+            <state relative-caret-position="651">
+              <caret line="138" column="26" selection-start-line="138" selection-start-column="26" selection-end-line="138" selection-end-column="26" />
               <folding>
-                <element signature="e#0#38#0" expanded="true" />
+                <element signature="e#0#17#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -285,15 +87,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>imgidx</find>
-      <find>image_path</find>
-      <find>read_list</find>
-      <find>prop</find>
-      <find>image_size</find>
-      <find>thre</find>
-      <find>load_property</find>
-      <find>pack</find>
-      <find>generate_config</find>
       <find>path_imgrec</find>
       <find>emb_size</find>
       <find>batch</find>
@@ -310,6 +103,20 @@
       <find>jsonify</find>
       <find>face_image</find>
       <find>urllib</find>
+      <find>model</find>
+      <find>data_extra</find>
+      <find>test</find>
+      <find>test(</find>
+      <find>_label</find>
+      <find>target_feature</find>
+      <find>idx</find>
+      <find>64</find>
+      <find>10</find>
+      <find>batch_size</find>
+      <find>do_flip</find>
+      <find>get_image</find>
+      <find>id</find>
+      <find>score_thr</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -333,7 +140,10 @@
         <option value="$PROJECT_DIR$/recognition/symbol/fresnet.py" />
         <option value="$PROJECT_DIR$/src/api/face_model.py" />
         <option value="$PROJECT_DIR$/src/api/test.py" />
+        <option value="$PROJECT_DIR$/src/api/show_match.py" />
+        <option value="$PROJECT_DIR$/k_reciprocal.py" />
         <option value="$PROJECT_DIR$/face_model.py" />
+        <option value="$PROJECT_DIR$/test.py" />
       </list>
     </option>
   </component>
@@ -373,7 +183,8 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../insightface" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.gutterIcons" />
   </component>
   <component name="RunDashboard">
@@ -405,7 +216,7 @@
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24986272" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24945416" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -493,29 +304,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/recognition/symbol/fresnet.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11880">
-          <caret line="549" column="81" selection-start-line="549" selection-start-column="81" selection-end-line="549" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/api/app.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1232">
           <caret line="65" column="34" selection-start-line="65" selection-start-column="29" selection-end-line="65" selection-end-column="34" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/recognition/eval/verification.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7238">
-          <caret line="347" column="12" selection-start-line="347" selection-start-column="12" selection-end-line="347" selection-end-column="12" />
-          <folding>
-            <element signature="e#1186#1224#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -530,46 +324,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/recognition/image_iter.py">
+    <entry file="file://$PROJECT_DIR$/RetinaFaceAntiCov/test.py" />
+    <entry file="file://$PROJECT_DIR$/RetinaFaceAntiCov/retinaface_cov.py" />
+    <entry file="file://$PROJECT_DIR$/src/api/face_model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="36" column="37" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="37" />
+        <state relative-caret-position="-1738">
+          <caret line="16" column="17" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="17" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/recognition/train.py">
+    <entry file="file://$PROJECT_DIR$/src/api/show_match.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="257" column="64" selection-start-line="257" selection-start-column="56" selection-end-line="257" selection-end-column="64" />
+        <state relative-caret-position="264">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
           <folding>
-            <element signature="e#0#38#0" expanded="true" />
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="106" column="22" selection-start-line="106" selection-start-column="8" selection-end-line="106" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/common/face_preprocess.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="824">
+        <state relative-caret-position="1496">
           <caret line="70" column="9" selection-start-line="70" selection-start-column="6" selection-end-line="70" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/common/face_image.py">
+    <entry file="file://$PROJECT_DIR$/recognition/eval/verification.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4400">
-          <caret line="13" column="48" selection-start-line="13" selection-start-column="48" selection-end-line="13" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/api/face_model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="16" column="17" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="17" />
+        <state relative-caret-position="5258">
+          <caret line="257" column="37" selection-start-line="257" selection-start-column="27" selection-end-line="257" selection-end-column="37" />
           <folding>
-            <element signature="e#0#38#0" expanded="true" />
+            <element signature="e#1186#1224#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -585,7 +384,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/deploy/face_embedding.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
+        <state relative-caret-position="66">
           <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
@@ -593,38 +392,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RetinaFaceAntiCov/test.py">
+    <entry file="file://$PROJECT_DIR$/recognition/train.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-694">
+        <state relative-caret-position="22">
+          <caret line="257" column="64" selection-start-line="257" selection-start-column="56" selection-end-line="257" selection-end-column="64" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/recognition/image_iter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="270" column="8" selection-start-line="270" selection-start-column="8" selection-end-line="270" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.local/lib/python3.5/site-packages/mxnet/module/module.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="574" column="8" selection-start-line="574" selection-start-column="8" selection-end-line="574" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/recognition/symbol/fresnet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="549" column="19" lean-forward="true" selection-start-line="549" selection-start-column="19" selection-end-line="549" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/match_res">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/show_match.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RetinaFaceAntiCov/retinaface_cov.py">
+    <entry file="file://$PROJECT_DIR$/src/common/face_image.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="220">
+          <caret line="13" column="48" selection-start-line="13" selection-start-column="48" selection-end-line="13" selection-end-column="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/api/test.py">
+    <entry file="file://$PROJECT_DIR$/k_reciprocal.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="5" column="13" selection-start-line="8" selection-start-column="63" selection-end-line="9" selection-end-column="6" />
+        <state relative-caret-position="-787">
+          <caret line="45" column="16" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="16" />
           <folding>
-            <element signature="e#0#17#0" expanded="true" />
+            <element signature="e#25#37#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/face_model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2578">
-          <caret line="19" column="54" selection-start-line="19" selection-start-column="54" selection-end-line="19" selection-end-column="54" />
+        <state relative-caret-position="673">
+          <caret line="244" column="31" selection-start-line="244" selection-start-column="20" selection-end-line="244" selection-end-column="31" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
@@ -633,8 +467,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="678">
-          <caret line="141" column="88" lean-forward="true" selection-start-line="141" selection-start-column="88" selection-end-line="141" selection-end-column="88" />
+        <state relative-caret-position="651">
+          <caret line="138" column="26" selection-start-line="138" selection-start-column="26" selection-end-line="138" selection-end-column="26" />
           <folding>
             <element signature="e#0#17#0" expanded="true" />
           </folding>
